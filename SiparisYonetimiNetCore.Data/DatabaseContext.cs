@@ -12,9 +12,11 @@ namespace SiparisYonetimiNetCore.Data
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Slide> Slides { get; set; }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) // bu metot veritabanı bağlantı ayarlarını yapabildiğimiz bir metot
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=localhost; Database=SiparisYonetimiNetCore; Integrated Security=True; TrustServerCertificate=True"); // connection string i yazıyoruz
+            var connectionString = Environment.GetEnvironmentVariable("DATABASE_URL") ?? 
+                @"Server=localhost; Database=SiparisYonetimiNetCore; Integrated Security=True; TrustServerCertificate=True";
+            optionsBuilder.UseSqlServer(connectionString);
             base.OnConfiguring(optionsBuilder);
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
