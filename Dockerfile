@@ -8,6 +8,8 @@ COPY SiparisYonetimiNetCore.WebUI/*.csproj ./SiparisYonetimiNetCore.WebUI/
 COPY SiparisYonetimiNetCore.Service/*.csproj ./SiparisYonetimiNetCore.Service/
 COPY SiparisYonetimiNetCore.Data/*.csproj ./SiparisYonetimiNetCore.Data/
 COPY SiparisYonetimiNetCore.Entities/*.csproj ./SiparisYonetimiNetCore.Entities/
+COPY SiparisYonetimiNetCore.WebAPI/*.csproj ./SiparisYonetimiNetCore.WebAPI/
+COPY SiparisYonetimiNetCore.WebAPIUsing/*.csproj ./SiparisYonetimiNetCore.WebAPIUsing/
 
 # Restore NuGet packages
 RUN dotnet restore
@@ -16,7 +18,7 @@ RUN dotnet restore
 COPY . .
 
 # Build and publish
-RUN dotnet publish -c Release -o /app/publish
+RUN dotnet publish SiparisYonetimiNetCore.WebUI/SiparisYonetimiNetCore.WebUI.csproj -c Release -o /app/publish
 
 # Runtime stage
 FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS final
