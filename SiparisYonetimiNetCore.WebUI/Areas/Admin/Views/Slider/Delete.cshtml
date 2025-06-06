@@ -1,12 +1,12 @@
 ﻿@model SiparisYonetimiNetCore.Entities.Slide
 
 @{
-    ViewData["Title"] = "Sil";
+    ViewData["Title"] = "Delete";
 }
 
-<h1>Sil</h1>
+<h1>Delete</h1>
 
-<h3>Silmek istiyor musunuz?</h3>
+<h3>Do you want to delete?</h3>
 <div>
     <h4>Slide</h4>
     <hr />
@@ -42,6 +42,6 @@
         <input type="hidden" asp-for="Id" />
         <input type="hidden" asp-for="Image" />
         <input type="submit" value="Sil" class="btn btn-danger" /> |
-        <a asp-action="Index">Listeye Dön</a>
+        <a asp-action="Index">Return To List</a>
     </form>
 </div>

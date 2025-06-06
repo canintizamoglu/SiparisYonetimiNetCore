@@ -5,7 +5,7 @@
 
 function addToCart(productId) {
     if (!isUserLoggedIn()) {
-        alert('Lütfen giriş yapın');
+        alert('Please login');
         window.location.href = '/Account/Login';
         return;
     }
@@ -16,11 +16,11 @@ function addToCart(productId) {
         .done(function (data) {
             if (data.success) {
                 $('#cart-count').text(data.count);
-                alert(data.productName + ' sepete eklendi!');
+                alert(data.productName + ' Added to Cart!');
             }
         })
         .fail(function () {
-            alert('Ürün sepete eklenirken bir hata oluştu.');
+            alert('An error occurred while adding the product to the cart.');
         });
 }
 

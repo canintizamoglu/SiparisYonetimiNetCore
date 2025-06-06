@@ -5,13 +5,13 @@ namespace SiparisYonetimiNetCore.Entities
     public class Category : IEntity
     {
         public int Id { get; set; }
-        [StringLength(100), Required, Display(Name = "Kategori Adı")]
+        [StringLength(100), Required, Display(Name = "Category Name")]
         public string Name { get; set; }
-        [Display(Name = "Kategori Açıklaması")]
+        [Display(Name = "Category Description")]
         public string? Description { get; set; }
-        [Display(Name = "Durum")]
+        [Display(Name = "Status")]
         public bool IsActive { get; set; }
-        [Display(Name = "Eklenme Tarihi"), ScaffoldColumn(false)]
+        [Display(Name = "Date Added"), ScaffoldColumn(false)]
         public DateTime? CreateDate { get; set; } = DateTime.Now;
         public virtual List<Product>? Products { get; set; }
     }

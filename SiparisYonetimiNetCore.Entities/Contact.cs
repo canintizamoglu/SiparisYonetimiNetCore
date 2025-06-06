@@ -5,15 +5,15 @@ namespace SiparisYonetimiNetCore.Entities
     public class Contact : IEntity
     {
         public int Id { get; set; }
-        [Display(Name = "İsim"), Required(ErrorMessage = "{0} Boş Bırakılamaz!")]
+        [Display(Name = "Name"), Required(ErrorMessage = "{0} Cannot be left blank!")]
         public string Name { get; set; }
-        [Display(Name = "Soyisim"), Required(ErrorMessage = "{0} Boş Bırakılamaz!")]
+        [Display(Name = "Surname"), Required(ErrorMessage = "{0} Boş Bırakılamaz!")]
         public string Surname { get; set; }
-        [Required(ErrorMessage = "{0} Boş Bırakılamaz!")]
+        [Required(ErrorMessage = "{0} Cannot be left blank!")]
         public string Email { get; set; }
-        [Display(Name = "Mesaj"), Required(ErrorMessage = "{0} Boş Bırakılamaz!")]
+        [Display(Name = "Message"), Required(ErrorMessage = "{0} Cannot be left blank!")]
         public string Message { get; set; }
-        [Display(Name = "Mesaj Tarihi"), ScaffoldColumn(false)]
+        [Display(Name = "Message date"), ScaffoldColumn(false)]
         public DateTime CreateDate { get; set; } = DateTime.Now;
     }
 }

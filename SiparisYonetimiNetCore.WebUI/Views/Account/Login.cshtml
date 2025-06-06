@@ -1,7 +1,7 @@
 @model LoginViewModel
 
 @{
-    ViewData["Title"] = "Giriş Yap";
+    ViewData["Title"] = "Login";
 }
 
 <div class="row justify-content-center">
@@ -19,7 +19,7 @@
                     </div>
                     
                     <div class="mb-3">
-                        <label asp-for="Password" class="form-label">Şifre</label>
+                        <label asp-for="Password" class="form-label">Password</label>
                         <input asp-for="Password" class="form-control" />
                         <span asp-validation-for="Password" class="text-danger"></span>
                     </div>
@@ -30,8 +30,8 @@
                     </div>
                     
                     <div class="d-grid gap-2">
-                        <button type="submit" class="btn btn-primary">Giriş Yap</button>
-                        <a asp-action="Register" class="btn btn-outline-secondary">Hesabınız yok mu? Kayıt olun</a>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                        <a asp-action="Register" class="btn btn-outline-secondary">Don't have an account? Sign up</a>
                     </div>
                 </form>
             </div>

@@ -14,7 +14,7 @@ namespace SiparisYonetimiNetCore.Data
         public virtual DbSet<Slide> Slides { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) // bu metot veritabanı bağlantı ayarlarını yapabildiğimiz bir metot
         {
-            optionsBuilder.UseSqlServer(@"Server=localhost; Database=SiparisYonetimiNetCore; Integrated Security=True; TrustServerCertificate=True"); // connection string i yazıyoruz
+            optionsBuilder.UseSqlServer(@"Server=localhost; Database=SiparisYonetimiNetCore; Integrated Security=True; TrustServerCertificate=True"); 
             base.OnConfiguring(optionsBuilder);
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)

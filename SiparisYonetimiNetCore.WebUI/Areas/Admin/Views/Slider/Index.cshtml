@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<SiparisYonetimiNetCore.Entities.Slide>
 
 @{
-    ViewData["Title"] = "Slide Listesi";
+    ViewData["Title"] = "Sliders";
 }
 
-<h1>Slide Listesi</h1>
+<h1>Sliders</h1>
 
 <p>
-    <a class="btn btn-outline-primary" asp-action="Create">Yeni Ekle</a>
+    <a class="btn btn-outline-primary" asp-action="Create">Add New</a>
 </p>
 <table class="table">
     <thead>
@@ -44,8 +44,8 @@
                     @Html.DisplayFor(modelItem => item.Link)
                 </td>
                 <td>
-                    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Düzenle</a> |
-                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Sil</a>
+                    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                 </td>
             </tr>
         }

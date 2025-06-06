@@ -4,13 +4,13 @@ namespace SiparisYonetimiNetCore.WebUI.Models
 {
     public class LoginViewModel
     {
-        [Required(ErrorMessage = "Email adresi gereklidir")]
-        [EmailAddress(ErrorMessage = "Geçerli bir email adresi giriniz")]
+        [Required(ErrorMessage = "Email is required")]
+        [EmailAddress(ErrorMessage = "Please enter a valid email address")]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "Şifre gereklidir")]
+        [Required(ErrorMessage = "Password is required")]
         [DataType(DataType.Password)]
-        [MinLength(6, ErrorMessage = "Şifre en az 6 karakter olmalıdır")]
+        [MinLength(6, ErrorMessage = "Password must be at least 6 characters")]
         public string Password { get; set; }
 
         public bool RememberMe { get; set; }

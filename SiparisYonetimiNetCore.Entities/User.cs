@@ -5,23 +5,23 @@ namespace SiparisYonetimiNetCore.Entities
     public class User : IEntity
     {
         public int Id { get; set; }
-        [StringLength(50), Required(ErrorMessage = "{0} gereklidir!"), Display(Name = "Adı")] // Veritabanında oluşan kolonun nvarcharmax yerine nvarchar(50) olması için
+        [StringLength(50), Required(ErrorMessage = "{0} Required!"), Display(Name = "Name")] // Veritabanında oluşan kolonun nvarcharmax yerine nvarchar(50) olması için
         public string Name { get; set; }
-        [StringLength(50), Required(ErrorMessage = "{0} gereklidir!"), Display(Name = "Soyadı")]
+        [StringLength(50), Required(ErrorMessage = "{0} Required!"), Display(Name = "Surname")]
         public string Surname { get; set; }
-        [StringLength(50), Required(ErrorMessage = "{0} gereklidir!")]
+        [StringLength(50), Required(ErrorMessage = "{0} Required!")]
         public string Email { get; set; }
-        [StringLength(15), Display(Name = "Telefon")]
+        [StringLength(15), Display(Name = "Phone")]
         public string? Phone { get; set; }
-        [StringLength(50), Display(Name = "Kullanıcı Adı")]
+        [StringLength(50), Display(Name = "Username")]
         public string? Username { get; set; }
-        [StringLength(50), Display(Name = "Şifre"), Required(ErrorMessage = "{0} gereklidir!")]
+        [StringLength(50), Display(Name = "Password"), Required(ErrorMessage = "{0} Required!")]
         public string Password { get; set; }
-        [Display(Name = "Durum")]
+        [Display(Name = "Status")]
         public bool IsActive { get; set; }
         [Display(Name = "Admin")]
         public bool IsAdmin { get; set; }
-        [Display(Name = "Eklenme Tarihi"), ScaffoldColumn(false)]
+        [Display(Name = "Date Added"), ScaffoldColumn(false)]
         public DateTime? CreateDate { get; set; } = DateTime.Now;
     }
 }

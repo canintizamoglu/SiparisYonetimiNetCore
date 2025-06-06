@@ -1,14 +1,14 @@
 ﻿@model SiparisYonetimiNetCore.Entities.Product
 
 @{
-    ViewData["Title"] = "Ürün Sil";
+    ViewData["Title"] = "Delete Product";
 }
 
-<h1>Ürün Sil</h1>
+<h1>Delete Product</h1>
 
-<h3>Ürün Silmek İstiyor Musunuz?</h3>
+<h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Ürün</h4>
+    <h4>Product</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -70,7 +70,7 @@
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
         <input type="hidden" asp-for="Image" />
-        <input type="submit" value="Sil" class="btn btn-danger" /> |
-        <a asp-action="Index">Listeye Dön</a>
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
     </form>
 </div>

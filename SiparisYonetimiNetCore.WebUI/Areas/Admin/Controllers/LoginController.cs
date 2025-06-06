@@ -34,7 +34,7 @@ namespace SiparisYonetimiNetCore.WebUI.Areas.Admin.Controllers
                 var kul = await _service.FirstOrDefaultAsync(u => u.Email == user.Email && u.Password == user.Password && u.IsActive);
                 if (kul == null)
                 {
-                    ModelState.AddModelError("", "Giriş Başarısız!");
+                    ModelState.AddModelError("", "Login Failed!");
                 }
                 else // kullanıcı varsa
                 {
@@ -51,7 +51,7 @@ namespace SiparisYonetimiNetCore.WebUI.Areas.Admin.Controllers
             }
             catch (Exception)
             {
-                ModelState.AddModelError("", "Hata Oluştu!");
+                ModelState.AddModelError("", "An Error Occurred!");
             }
             return View(user);
         }
